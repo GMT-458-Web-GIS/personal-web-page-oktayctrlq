@@ -3,41 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oktay Duman | Web Page</title>
+  <title>Oktay Duman | Ana Sayfa</title>
 
-  <!-- CSS dosyası bağlantısı -->
+  <!-- Senin stil dosyan -->
   <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <!-- OpenLayers (ileride harita için kullanılacak) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css" />
-  <script src="https://cdn.jsdelivr.net/npm/ol/ol.js"></script>
-
-  <!-- JS dosyası bağlantısı -->
-  <script defer src="assets/js/app.js"></script>
+  <!-- OpenLayers CSS (güvenli CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/ol@latest/ol.css" />
 </head>
 
 <body>
-  <!-- Navigasyon menüsü -->
+  <!-- Menü -->
   <nav>
     <ul>
       <li><a href="index.html">Ana Sayfa</a></li>
       <li><a href="background.html">Hakkımda</a></li>
-      <li><a href="projects.html">Projeler</a></li>
+      <li><a href="social.html">Sosyal</a></li>
     </ul>
   </nav>
 
   <!-- Başlık -->
-  <header>
-    <h1>Hoşgeldiniz! Ben Oktay Duman 👋</h1>
-    <p>Bu kişisel web sayfası sizler için hazırlanmıştır.</p>
+  <header class="hero">
+    <h1 class="fade-in">Hoşgeldiniz! Ben Oktay Duman 👋</h1>
+    <p class="fade-in-delay">Bu kişisel web sayfası sizler için hazırlanmıştır.</p>
   </header>
 
   <!-- Harita Alanı -->
-  <section id="map" style="width: 100%; height: 400px;"></section>
+  <section>
+    <div id="map"></div>
+  </section>
 
-  <!-- Alt bilgi -->
+  <!-- Alt Bilgi -->
   <footer>
     <p>© 2025 Oktay Duman | Tüm Hakları Saklıdır</p>
   </footer>
+
+  <!-- OpenLayers JS (güvenli CDN) -->
+  <script src="https://unpkg.com/ol@latest/dist/ol.js"></script>
+
+  <!-- Senin harita kodun -->
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
