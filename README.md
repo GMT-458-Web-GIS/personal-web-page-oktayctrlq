@@ -1,5 +1,5 @@
 ### 🌍 Live Demo  
-➡️ [Click here to view the live version](https://gmt-458-web-gis.github.io/personal-web-page-oktayduman/)
+https://gmt-458-web-gis.github.io/personal-web-page-oktayctrlq/
 
 Here’s your README.md in English, rewritten from your Turkish version and aligned with the assignment PDF requirements
 
@@ -84,4 +84,4 @@ Day 2: OpenLayers map integration
 
 Day 3: Animations, transitions, and final polishing
 ### 🌍 Live Demo  
-➡️ [Click here to view the live version](https://gmt-458-web-gis.github.io/personal-web-page-oktayduman/)
+https://gmt-458-web-gis.github.io/personal-web-page-oktayctrlq/ 
