@@ -1,3 +1,6 @@
+### 🌍 Live Demo  
+➡️ [Click here to view the live version](https://gmt-458-web-gis.github.io/personal-web-page-oktayduman/)
+
 Here’s your README.md in English, rewritten from your Turkish version and aligned with the assignment PDF requirements
 
 a1_web_page
@@ -80,3 +83,5 @@ Day 1: Base HTML and CSS structure
 Day 2: OpenLayers map integration
 
 Day 3: Animations, transitions, and final polishing
+### 🌍 Live Demo  
+➡️ [Click here to view the live version](https://gmt-458-web-gis.github.io/personal-web-page-oktayduman/)
