@@ -1,7 +1,22 @@
 window.addEventListener("DOMContentLoaded", () => {
   console.log("✅ app.js çalıştı, harita hazırlanıyor...");
 
-  // OL kütüphanesi yüklü mü kontrol et
+  // === 🟢 Daktilo efekti ===
+  const typingText = document.querySelector(".typing-text");
+  const text = Array.from("Hoşgeldiniz! Ben Oktay Duman 👋"); // Türkçe karakter & emoji desteği
+  let index = 0;
+  typingText.textContent = "";
+
+  function type() {
+    if (index < text.length) {
+      typingText.textContent += text[index];
+      index++;
+      setTimeout(type, 100);
+    }
+  }
+  type();
+
+  // === 🗺️ Harita ===
   if (!window.ol) {
     console.error("❌ OpenLayers (ol) yüklenemedi!");
     return;
@@ -13,7 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
     zoom: 12,
   });
 
-  // === 1️⃣ Farklı harita teması (Stamen Watercolor) ===
+  // Farklı harita teması (Stamen Watercolor)
   const stamenLayer = new ol.layer.Tile({
     source: new ol.source.XYZ({
       url: "https://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",
@@ -21,19 +36,19 @@ window.addEventListener("DOMContentLoaded", () => {
     }),
   });
 
-  // === 2️⃣ OpenStreetMap katmanı (altyapı olarak) ===
+  // OpenStreetMap katmanı
   const osmLayer = new ol.layer.Tile({
     source: new ol.source.OSM(),
   });
 
-  // === 3️⃣ Harita nesnesi ===
+  // Harita nesnesi
   const map = new ol.Map({
     target: "map",
     layers: [osmLayer, stamenLayer],
     view: view,
   });
 
-  // === 4️⃣ Marker (ikon) ===
+  // Marker
   const marker = new ol.Feature({
     geometry: new ol.geom.Point(ol.proj.fromLonLat([32.8597, 39.9334])),
     name: "Ankara",
@@ -54,13 +69,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
   map.addLayer(vectorLayer);
 
-  // === 5️⃣ Harita kontrolleri ===
+  // Kontroller
   map.addControl(new ol.control.ZoomSlider());
   map.addControl(new ol.control.ScaleLine());
   map.addControl(new ol.control.FullScreen());
   map.addControl(new ol.control.OverviewMap());
 
-  // === 6️⃣ Popup (bilgi balonu) ===
+  // Popup (bilgi balonu)
   const popup = document.createElement("div");
   popup.className = "ol-popup";
   popup.innerHTML = "";
@@ -85,7 +100,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // === 7️⃣ Tıklanan konumu konsola yazdır ===
+  // Koordinat yazdırma
   map.on("click", function (evt) {
     const coord = ol.proj.toLonLat(evt.coordinate);
     console.log(`🧭 Koordinatlar: ${coord[0].toFixed(4)}, ${coord[1].toFixed(4)}`);

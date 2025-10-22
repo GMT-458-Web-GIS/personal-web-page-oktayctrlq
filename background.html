@@ -4,8 +4,142 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oktay Duman | Hakkımda</title>
+
   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    /* === GENEL === */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #000000, #0a0a23);
+      background-size: 200% 200%;
+      animation: bgShift 10s ease infinite;
+      color: white;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* === Menü === */
+    nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 30, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 12px 0;
+      text-align: center;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00f5d4;
+      text-shadow: 0 0 10px #00f5d4;
+    }
+
+    /* === Başlık === */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 40px;
+    }
+
+    .hero h1 {
+      font-family: 'Gill Sans', 'Trebuchet MS', sans-serif;
+      font-size: 3em;
+      background: linear-gradient(90deg, #00f5d4, #00b4d8, #0077b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00f5d4; }
+      to { text-shadow: 0 0 25px #00b4d8; }
+    }
+
+    .hero p {
+      color: #c8e6ff;
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    /* === Hakkımda Bölümü === */
+    .about-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .about-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      width: 70%;
+      max-width: 900px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0, 245, 212, 0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00f5d4;
+      box-shadow: 0 0 20px rgba(0, 245, 212, 0.5);
+      margin-bottom: 20px;
+    }
+
+    .about-card h2 {
+      color: #00f5d4;
+      margin-bottom: 15px;
+      font-size: 1.8em;
+    }
+
+    .about-card p {
+      font-size: 1.1em;
+      color: #d9eaff;
+      line-height: 1.6;
+    }
+
+    /* === Footer === */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(10, 10, 30, 0.8);
+      color: #d1e8ff;
+      font-size: 0.95em;
+      margin-top: 40px;
+    }
+  </style>
 </head>
+
 <body>
   <nav>
     <ul>
@@ -16,32 +150,49 @@
   </nav>
 
   <header class="hero">
-    <h1 class="fade-in">Ben <span>Oktay Duman</span></h1>
-    <p class="fade-in-delay">Hacettepe Üniversitesi Geomatik Mühendisliği öğrencisiyim 🌍</p>
+    <h1>Oktay Duman</h1>
+    <p>Hacettepe Üniversitesi Geomatik Mühendisliği öğrencisiyim 🌍</p>
   </header>
 
- <section class="about-section">
-  <div class="about-card fade-in">
-    <!-- Profil fotoğrafı -->
-    <img src="assets/img/images.png" alt="Oktay Duman" class="profile-img">
-    
-    <!-- Başlık ve açıklama -->
-    <h2>Hakkımda</h2>
-    <p>
-      Web teknolojileri, uzaktan algılama ve konumsal veri analizine büyük ilgi duyuyorum.  
-      GMT234 dersi kapsamında geliştirdiğim bu web sayfası, hem estetik hem de teknik olarak  
-      öğrendiklerimi birleştirdiğim kişisel bir proje oldu.
-    </p>
-    <p>
-      Gelecekte yapay zekâ destekli harita uygulamaları geliştirerek, coğrafi verileri insanların  
-      daha kolay anlayabileceği bir biçimde sunmak istiyorum.
-    </p>
-  </div>
-</section>
-
+  <section class="about-section">
+    <div class="about-card">
+      <img src="assets/img/images.png" alt="Oktay Duman" class="profile-img">
+      <h2>Hakkımda</h2>
+      <p>
+        Ben Oktay Duman, Hacettepe Üniversitesi Geomatik Mühendisliği öğrencisiyim.  
+        Üniversite hayatım boyunca iki farklı staj yaptım — Altındağ Belediyesi ve çeşitli harita şirketlerinde.  
+        Ayrıca e-spor alanında editörlük/yazarlık (1 yıl) ve sonrasında sosyal medya yöneticiliği yaptım.  
+        Bu yıl mezun olmayı hedefliyorum ve kendimi geliştirmeye devam ediyorum. 🚀
+      </p>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Oktay Duman | Hacettepe Üniversitesi</p>
+    <p>Oktay Duman | Hacettepe University</p>
   </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+
+    // Tüm linklere yumuşak çıkış efekti ekle
+    const links = document.querySelectorAll("a[href]");
+    for (const link of links) {
+      link.addEventListener("click", function (e) {
+        const target = this.getAttribute("href");
+
+        if (target && !target.startsWith("#") && !this.target) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          document.body.style.opacity = 0;
+          setTimeout(() => {
+            window.location.href = target;
+          }, 400); // geçiş süresi
+        }
+      });
+    }
+  });
+</script>
+
 </body>
 </html>

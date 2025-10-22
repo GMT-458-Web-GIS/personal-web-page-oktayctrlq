@@ -5,11 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oktay Duman | Ana Sayfa</title>
 
-  <!-- Senin stil dosyan -->
+  <!-- Stil dosyan -->
   <link rel="stylesheet" href="assets/css/styles.css" />
-
-  <!-- OpenLayers CSS (güvenli CDN) -->
   <link rel="stylesheet" href="https://unpkg.com/ol@latest/ol.css" />
+
+  <style>
+    /* === GENEL FONT AYARI === */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #000000, #0a0a23);
+      background-size: 200% 200%;
+      animation: bgShift 10s ease infinite;
+      color: white;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* === Menü === */
+    nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 30, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 12px 0;
+      text-align: center;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00f5d4;
+      text-shadow: 0 0 10px #00f5d4;
+    }
+
+    /* === Daktilo (Typing) Efekti === */
+    .typing-container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .typing-text {
+      font-family: 'Gill Sans', 'Trebuchet MS', sans-serif;
+      font-size: 2.8em;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00f5d4, #00b4d8, #0077b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      border-right: 3px solid #00f5d4;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: blink 0.8s step-end infinite;
+      letter-spacing: 1px;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .fade-in-delay {
+      opacity: 0;
+      text-align: center;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 4.2s;
+      color: #c8e6ff;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* === Harita === */
+    #map {
+      width: 80%;
+      height: 420px;
+      margin: 40px auto;
+      border-radius: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 40px rgba(0, 245, 212, 0.3);
+    }
+
+    /* === Footer === */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(10, 10, 30, 0.8);
+      color: #d1e8ff;
+      font-size: 0.95em;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 
 <body>
@@ -24,7 +133,9 @@
 
   <!-- Başlık -->
   <header class="hero">
-    <h1 class="fade-in">Hoşgeldiniz! Ben Oktay Duman 👋</h1>
+    <div class="typing-container">
+      <h1 class="typing-text"></h1>
+    </div>
     <p class="fade-in-delay">Bu kişisel web sayfası sizler için hazırlanmıştır.</p>
   </header>
 
@@ -35,13 +146,38 @@
 
   <!-- Alt Bilgi -->
   <footer>
-    <p>© 2025 Oktay Duman | Tüm Hakları Saklıdır</p>
+    <p> Oktay Duman | Tüm Hakları Saklıdır 😄</p>
   </footer>
 
-  <!-- OpenLayers JS (güvenli CDN) -->
+  <!-- OpenLayers JS -->
   <script src="https://unpkg.com/ol@latest/dist/ol.js"></script>
 
-  <!-- Senin harita kodun -->
+  <!-- Daktilo Efekti -->
+
+  <!-- Harita Script -->
   <script src="assets/js/app.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+
+    // Tüm linklere yumuşak çıkış efekti ekle
+    const links = document.querySelectorAll("a[href]");
+    for (const link of links) {
+      link.addEventListener("click", function (e) {
+        const target = this.getAttribute("href");
+
+        if (target && !target.startsWith("#") && !this.target) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          document.body.style.opacity = 0;
+          setTimeout(() => {
+            window.location.href = target;
+          }, 400); // geçiş süresi
+        }
+      });
+    }
+  });
+</script>
+
 </body>
 </html>

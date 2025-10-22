@@ -7,12 +7,34 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1e1f4b, #3a0ca3, #00b4d8);
-  background-size: 300% 300%;
+  background: linear-gradient(135deg, #000000, #0a0a23); /* siyah → lacivert */
+  background-size: 200% 200%;
   color: white;
-  animation: bgShift 12s ease infinite;
+  animation: bgShift 10s ease infinite;
   overflow-x: hidden;
 }
+
+/* Arka plan geçiş animasyonu */
+@keyframes bgShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Arka plan geçiş animasyonu */
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 /* === Arka plan geçişi === */
 @keyframes bgShift {
@@ -56,14 +78,6 @@ nav a:hover {
 .hero {
   text-align: center;
   padding: 100px 20px 50px;
-}
-
-.hero h1 {
-  font-size: 2.8em;
-  background: linear-gradient(to right, #72efdd, #5390d9, #b5179e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeIn 1.5s ease;
 }
 
 .hero span {
@@ -270,4 +284,36 @@ footer {
   transform: scale(1.05);
   transition: transform 0.3s ease;
   box-shadow: 0 0 25px rgba(0, 245, 212, 0.9);
+}
+
+body {
+  background: linear-gradient(135deg, #1e1f4b, #3a0ca3, #00b4d8, #90e0ef);
+  background-size: 400% 400%;
+  animation: bgShift 10s ease infinite;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+#map:hover {
+  box-shadow: 0 0 30px #00f5d4, 0 0 60px #5390d9;
+  transition: all 0.4s ease-in-out;
+}
+
+@keyframes textFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Sayfa geçiş animasyonu */
+body {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+body.fade-in {
+  opacity: 1;
 }

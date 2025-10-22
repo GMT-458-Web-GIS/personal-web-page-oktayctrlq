@@ -2,10 +2,182 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=7.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oktay Duman | Sosyal</title>
+
   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    /* === GENEL === */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #000000, #0a0a23);
+      background-size: 200% 200%;
+      animation: bgShift 10s ease infinite;
+      color: white;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* === Menü === */
+    nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 30, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 12px 0;
+      text-align: center;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00f5d4;
+      text-shadow: 0 0 10px #00f5d4;
+    }
+
+    /* === Başlık === */
+    .hero {
+      text-align: center;
+      padding: 100px 20px 40px;
+    }
+
+    .hero h1 {
+      font-family: 'Gill Sans', 'Trebuchet MS', sans-serif;
+      font-size: 2.6em;
+      background: linear-gradient(90deg, #00f5d4, #00b4d8, #0077b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00f5d4; }
+      to { text-shadow: 0 0 25px #00b4d8; }
+    }
+
+    .hero p {
+      color: #c8e6ff;
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    /* === Sosyal Kartlar === */
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      width: 250px;
+      padding: 25px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 0 25px rgba(0, 245, 212, 0.1);
+    }
+
+    .card h3 {
+      color: #00f5d4;
+      margin-bottom: 10px;
+    }
+
+    .card a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .card a:hover {
+      color: #00b4d8;
+      text-shadow: 0 0 10px #00f5d4;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(0, 245, 212, 0.4);
+    }
+
+    /* === İlgi Alanları === */
+    .about-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .about-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      width: 75%;
+      max-width: 900px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0, 245, 212, 0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .about-card h2 {
+      color: #00f5d4;
+      margin-bottom: 20px;
+    }
+
+    .interests-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      display: inline-block;
+    }
+
+    .interests-list li {
+      font-size: 1.1em;
+      color: #d9eaff;
+      margin: 8px 0;
+    }
+
+    /* === Footer === */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(10, 10, 30, 0.8);
+      color: #d1e8ff;
+      font-size: 0.95em;
+      margin-top: 40px;
+    }
+  </style>
 </head>
+
 <body>
   <nav>
     <ul>
@@ -16,42 +188,66 @@
   </nav>
 
   <header class="hero">
-    <h1 class="fade-in">Sosyal Medya & İlgi Alanlarım 🌐</h1>
-    <p class="fade-in-delay">Benimle iletişim kurabileceğiniz platformlar</p>
+    <h1>Sosyal Medya & İlgi Alanlarım 🌐</h1>
+    <p>Benimle iletişim kurabileceğiniz platformlar</p>
   </header>
 
-  <!-- 🔹 Sosyal Medya Kutuları -->
+  <!-- 🔹 Sosyal Medya Kartları -->
   <section class="cards-container">
-    <div class="card glow">
+    <div class="card">
       <h3>Instagram</h3>
       <p><a href="https://www.instagram.com/oktayctrlq" target="_blank">@oktayctrlq</a></p>
     </div>
-    <div class="card glow">
+
+    <div class="card">
       <h3>LinkedIn</h3>
       <p><a href="https://www.linkedin.com/" target="_blank">Oktay Duman</a></p>
     </div>
-    <div class="card glow">
+
+    <div class="card">
       <h3>GitHub</h3>
       <p><a href="https://github.com/oktayctrlq" target="_blank">github.com/oktayctrlq</a></p>
     </div>
   </section>
 
-  <!-- 🔹 Sosyal Etkinlikler / İlgi Alanları -->
+  <!-- 🔹 İlgi Alanları -->
   <section class="about-section">
-    <div class="about-card fade-in">
+    <div class="about-card">
       <h2>İlgi Alanlarım & Sosyal Etkinliklerim 💡</h2>
       <ul class="interests-list">
-        <li>🎯 Harita ve konum tabanlı web uygulamaları geliştirmek</li>
-        <li>📸 Fotoğrafçılık ve doğa yürüyüşleri</li>
-        <li>🤝 Geomatik Topluluğu sosyal etkinliklerine katılmak</li>
-        <li>💻 Açık kaynak projelere katkı yapmak</li>
-        <li>📚 Web tasarımı, uzaktan algılama ve veri görselleştirme çalışmaları</li>
+        <li>🎯 Deli futbol basketbol hastası biriyim.</li>
+        <li>📸 Sporla yapmak ve ve spor karşılaşmaları izlemek.</li>
+        <li>🤝 Sosyal etkinliklere katılmak ve yeni insanlarla tanışmak.</li>
+        <li>💻 Bilgisayar oyunları oynamak ve oyun teknolojilerini takip etmek.</li>
       </ul>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Oktay Duman | Sosyal Sayfa</p>
+    <p>Oktay Duman | Sosyal</p>
   </footer>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+
+    // Tüm linklere yumuşak çıkış efekti ekle
+    const links = document.querySelectorAll("a[href]");
+    for (const link of links) {
+      link.addEventListener("click", function (e) {
+        const target = this.getAttribute("href");
+
+        if (target && !target.startsWith("#") && !this.target) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          document.body.style.opacity = 0;
+          setTimeout(() => {
+            window.location.href = target;
+          }, 400); // geçiş süresi
+        }
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
